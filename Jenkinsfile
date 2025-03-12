@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Front copy') {
             steps {
-                sh 'cp /var/lib/jenkins/workspace/site/Dockerfile-front /var/lib/jenkins/workspace/site/FrontEnd/my-app/Dockerfile'
+                sh 'cp /var/lib/jenkins/workspace/Diplom_test/Dockerfile-front /var/lib/jenkins/workspace/Diplom_test/FrontEnd/my-app/Dockerfile'
             }
         }
         stage('Docker-build-front') {
             steps {
-                sh 'sudo docker build -t front /var/lib/jenkins/workspace/site/FrontEnd/my-app/'
+                sh 'sudo docker build -t front /var/lib/jenkins/workspace/Diplom_test/FrontEnd/my-app/'
             }
         }
         stage('docker run front') {
@@ -18,12 +18,12 @@ pipeline {
         }
         stage('Bek copy') {
             steps {
-                sh 'cp /var/lib/jenkins/workspace/site/Dockerfile-bek /var/lib/jenkins/workspace/site/BackEnd/Amazon-clone/Dockerfile'
+                sh 'cp /var/lib/jenkins/workspace/Diplom_test/Dockerfile-bek /var/lib/jenkins/workspace/Diplom_test/BackEnd/Amazon-clone/Dockerfile'
             }
         }
         stage('Docker-build-bek') {
             steps {
-                sh 'sudo docker build -t bek /var/lib/jenkins/workspace/site/BackEnd/Amazon-clone/'
+                sh 'sudo docker build -t bek /var/lib/jenkins/workspace/Diplom_test/BackEnd/Amazon-clone/'
             }
         }
         stage('docker run bek') {
